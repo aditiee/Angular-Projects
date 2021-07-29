@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <span class="text-muted" style="display: flex;align-items: center;justify-content: center;">Searching by {{Search}}</span>
+
+    <div class="row m-3 p-3 " *ngIf="movies && movies.length ">
+        <div class="card " style="width: 18rem; " *ngFor="let movie of movies  |filter: Search">
+            <img *ngIf=movie.imageFlag class="card-img-top " [src]='movie.cover' alt="Card image cap ">
+            <div class="card-body ">
+                <h5 class="card-title "><strong>Movie Name : </strong>{{movie.movieName}}</h5>
+                <p class="card-text "><strong>Category : </strong>{{movie.movieCategory}}</p>
+                <p class="card-text "><strong>Release Date : </strong>{{movie.movieRelease| date:'medium' }} </p>
+                <p class="card-text "><strong>Category : </strong>{{250.00 | currency : 'INR' }}</p>
+                <p class="card-text "><strong>Ratings : </strong><span style="color:gold;font-weight: 900;font-size: larger;">{{movie.ratings}}</span></p>
+                <button (click)="showImage(movie)" class="btn btn-primary">{{movie.imageFlag ? 'Hide' : 'Show'}}</button>
+            </div>
+        </div>
+    </div>
+
+</div>

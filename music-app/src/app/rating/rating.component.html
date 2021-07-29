@@ -1,0 +1,6 @@
+<span *ngFor="let r of ratings; let i = index">
+  <mat-icon *ngIf="i < rating; else elseBlock">star</mat-icon>
+  <ng-template #elseBlock>
+    <mat-icon>star_border</mat-icon>
+  </ng-template>
+</span>

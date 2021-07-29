@@ -1,0 +1,52 @@
+main {
+  display: flex;
+}
+.example-container {
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.example-card {
+  padding: 2rem;
+  max-width: 300px;
+  margin: 1rem;
+}
+
+.mat-icon-custom {
+  height: 48px;
+  width: 48px;
+  font-size: 48px;
+}
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  height: 3rem;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+mat-slider {
+  width: 100%;
+}
+
+.media-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .time-slider {
+    width: 100% !important;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .media-action-bar {
+    width: 100%;
+    padding: 2.5rem;
+    justify-content: center;
+    .mat-icon {
+      height: 48px !important;
+      width: 48px !important;
+      font-size: 48px !important;
+    }
+  }
+}

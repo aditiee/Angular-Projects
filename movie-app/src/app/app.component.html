@@ -1,0 +1,18 @@
+<div class="body">
+  <app-header (onQuery)="searchQuery($event)"></app-header>
+  <div *ngIf="hasRoute('/home')" style="margin: 1rem 0">
+    <b class="add__movie">ADD MOVIE</b>
+    <a
+      routerLink="/add"
+      class="btn-floating btn-small waves-effect waves-light red"
+      ><i class="material-icons">add</i></a
+    >
+  </div>
+  <app-main
+    *ngIf="hasRoute('/home')"
+    [query]="query"
+    [movies]="movies"
+  ></app-main>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,24 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">movie app</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <div class="col s6">
+          <input
+            placeholder="search movies"
+            #movieName
+            type="text"
+            class="validate"
+            (input)="searchQuery(movieName.value)"
+          />
+        </div>
+      </li>
+      <li (click)="searchQuery(movieName.value)">
+        <i class="material-icons">search</i>
+      </li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/contact">contact us</a></li>
+      <li><a routerLink="/about">About us</a></li>
+    </ul>
+  </div>
+</nav>

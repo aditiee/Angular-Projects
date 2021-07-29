@@ -1,0 +1,46 @@
+<main>
+  <div class="search" *ngIf="query">
+    <b>Search query </b> <span>{{ query }}</span>
+  </div>
+  <div class="row" *ngIf="movies.length; else elseBlock">
+    <div class="col card__container" *ngFor="let movie of movies">
+      <div class="card" style="padding: 1rem">
+        <div
+          class="card-image"
+          *ngIf="movie.show"
+          (click)="navigateTo(movie.id)"
+        >
+          <img src="{{ movie.image }}" />
+          <span class="card-title">{{ movie.name | uppercase }}</span>
+        </div>
+        <div class="card-content" style="padding-left: 0">
+          <div *ngIf="!movie.show">
+            <b>Title </b> <span> &bull; {{ movie.name }} </span>
+          </div>
+          <div class="rating">
+            <b>Rating &nbsp;</b>
+            <app-rating [rating]="movie.rating"></app-rating>
+          </div>
+          <div class="release-year">
+            <b>Release Year </b>
+            <span> &bull; {{ movie.releaseYear }} </span>
+          </div>
+          <div class="genre">
+            <b>Genre </b>
+            <span> &bull; {{ movie.genre }} </span>
+          </div>
+        </div>
+        <div>
+          <a
+            class="waves-effect waves-light btn"
+            (click)="toggleImage(movie)"
+            >{{ movie.show ? "hide" : "show" }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="message">No movies found</div>
+  </ng-template>
+</main>

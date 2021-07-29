@@ -1,0 +1,10 @@
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add__movie {
+  margin: 0 0.5rem;
+}

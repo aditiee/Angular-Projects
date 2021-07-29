@@ -1,0 +1,73 @@
+<mat-toolbar>
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+    <button mat-button>
+    <span [ngStyle]="styles">
+      <mat-icon class="mat-icon-custom">graphic_eq</mat-icon>
+      MUSIC-APP
+    </span>
+  </button>
+    <span class="example-spacer"></span>
+    <div class="search">
+        <input type="text" placeholder="search" class="search__box" />
+        <button mat-button>
+      <mat-icon>search</mat-icon>
+    </button>
+    </div>
+    <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" color="primary">
+    Account
+  </button>
+    <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon">
+    Logout
+  </button>
+</mat-toolbar>
+<mat-drawer #drawer class="example-sidenav" mode="side">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+
+
+    <br />
+    <b> LATEST RELEASES </b>
+    <mat-card *ngFor="let m of music" class="simple-card">
+        <b>{{ m.name }}</b> &bull; {{ m.singer }}
+    </mat-card>
+    <br />
+    <b>FAVOURITES</b>
+    <mat-card *ngFor="let f of favourites" class="simple-card">
+        <b>{{ f.name }}</b> &bull; {{ f.singer }}
+    </mat-card>
+</mat-drawer>
+<b class="add__movie">ADD MUSIC</b>
+<a routerLink="/add" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a
+    >
+<div class="row">
+    <form [formGroup]="musicForm" (ngSubmit)="onSubmit()" class="col s12">
+        <div class="row">
+            <div class="col m4"></div>
+            <div class="input-field col m4 s12">
+                <input placeholder="music name" id="first_name" type="text" class="validate" formControlName="musicName" />
+            </div>
+            <div class="col m4"></div>
+        </div>
+        <div class="row">
+            <div class="col m4"></div>
+            <div class="input-field col m4 s12">
+                <input id="last_name" placeholder="genre" type="text" class="validate" formControlName="genre" />
+            </div>
+            <div class="col m4"></div>
+        </div>
+        <div class="row">
+            <div class="col m4"></div>
+            <div class="col m4 s12">
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+      Submit
+      <i class="material-icons right">send</i>
+    </button>
+            </div>
+            <div class="col m4"></div>
+        </div>
+    </form>
+</div>

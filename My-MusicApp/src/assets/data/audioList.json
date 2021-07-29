@@ -1,0 +1,17 @@
+ [{
+         "url": "../assets/song1.mp3",
+         "title": "Sample 1",
+         "cover": "../assets/song1.jfif"
+     },
+     {
+         "url": "../assets/Cheap Thrills.mp3",
+         "title": "Sample 2",
+         "cover": "../assets/Cheap Thrills.jfif"
+     },
+
+     {
+         "url": "../assets/Girls-like-you.mp3",
+         "title": "Sample 1",
+         "cover": "../assets/girls.jfif"
+     }
+ ]
